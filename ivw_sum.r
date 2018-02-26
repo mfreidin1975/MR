@@ -15,9 +15,9 @@ ivw_sum<-function(B_o,SE_o,B_e,SE_e,rho=0) {
  OR<-exp(B)
  CI_L<-exp(B-1.96*SE)
  CI_U<-exp(B+1.96*SE)
- res<-cbind(B,SE,OR,CI_L,CI_U,p)
- names(res)<-c("Effect","SE","OR","CI_L","CI_U","P-value")
+ res<-round(cbind(B,SE,OR,CI_L,CI_U,p),4)
+ colnames(res)<-c("Effect","SE","OR","CI_L","CI_U","P-value")
  
- return(res)
+ print(res)
  }
  
